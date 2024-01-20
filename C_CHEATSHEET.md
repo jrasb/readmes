@@ -1,4 +1,4 @@
-# C Cheatsheet
+# C Cheat-sheet
 
 ## String formatting
 
