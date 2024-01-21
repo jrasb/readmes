@@ -120,13 +120,13 @@ int arr[10][8]  // Array of 10 elements, each of type 'array of 8 int elements'
 ### Pointers
 
 ```c
-// Pointers in C point to an adress in memory related to a variable
+// Pointers in C point to an address in memory related to a variable
 
 int a = 20;
 int *pa = NULL;
 
 pa = &a
-// In this case, pa is a pointer that points to the memory adress of a
+// In this case, pa is a pointer that points to the memory address of a
 
 int array[5]        // Declares array of 5 integers
 int *ptr = array;   // Array used as pointer
@@ -140,7 +140,7 @@ ptr[0] = 1;         // Pointer indexed with array syntax
 int array[5] = {2, 4, 3, 1, 5};
 ```
 
-x   | 0 | 1 | 2 | 3 
+x    | 0 | 1 | 2 | 3 
 -----|---|---|---|---
 1000 | 2 | 0 | 0 | 0
 1004 | 4 | 0 | 0 | 0 
