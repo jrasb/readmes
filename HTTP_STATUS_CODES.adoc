@@ -1,0 +1,285 @@
+= HTTP STATUS CODES
+
+[%header, cols=3]
+|===
+
+| CODE
+| NAME
+| DESCRIPTION
+
+|
+|
+|
+
+
+| 100 | Continue
+| The server has received the request headers and the client should proceed to send the request body
+
+| 101 | Switching Protocols
+| The requester has asked the server to switch protocols and the server has agreed to do so
+
+| 102 | Processing
+| Indicates that the server has received and is processing the request, but no response is available yet
+
+| 103 | Early Hints
+| Used to return some response headers before final HTTP message
+
+|||
+
+| 200 | OK
+| Standard response for successful HTTP requests
+
+| 201 | Created
+| The request has been fulfilled, resulting in the creation of a new resource
+
+| 202 | Accepted
+| The request has been accepted for processing, but the processing has not been completed. The request might or might
+not be eventually acted upon, and may be disallowed when processing occurs.
+
+| 203 | Non-Authoritative Information
+| The server is a transforming proxy that received a 200 OK from its origin, but is returning a modified version of the
+origin's response
+
+| 204 | No Content
+| The server successfully processed the request, and is not returning any content
+
+| 205 | Reset Content
+| The server successfully processed the request, asks that the requester reset its document view, and is not returning
+any content
+
+| 206 | Partial Content
+| The server  is delivering only part of the resource due to a range header sent by the client
+
+| 207 | Multi-Status
+| The message body that follows is by default an XML message and can contain a number of separate response codes,
+depending on how many sub-requests were made
+
+| 208 | Already Reported
+| The members of a DAV binding have already been enumerated in a preceding part of the (multistatus) response, and are
+not being included again
+
+| 226 | IM Used
+| The server has fulfilled a request for the resource, and the response is a representation of the result of one or more
+instance-manipulations applied to the current instance
+
+|||
+
+| 300 | Multiple Choices
+| Indicates that multiple choices for the resource from which the client may choose.
+
+| 301 | Moved Permanently
+| This and all future requests should be redirected to the given URI
+
+| 302 | Found
+| Tells the client to look at another URL
+
+| 303 | See other
+| The response to the request can be found under another URI using the GET method
+
+| 304 | Not Modified
+| Indicates that the resource has not been modified since the version specified by the request headers If-Modified-Since
+or If-None-Match.
+
+| 305 | Use Proxy
+| The requested resource is available only through a proxy, the address for which is provided in the response.
+
+| 306 | Switch Proxy
+| No longer used. Originally meant "Subsequent request should use the specified proxy"
+
+| 307 | Temporary Redirect
+| In this case, the request should be repeated with another URI; however, future requests should still use the original
+URI
+
+| 308 | Permanent Redirect
+| This and all future requests should be directed to the given URI.
+
+|||
+
+| 400 | Bad Request
+| The server cannot or will not process the request due to an apparent client error
+
+| 401 | Unauthorized
+| Similar to 403 Forbidden, but specifically for when authentication is required and has failed or has not yet been
+provided
+
+| 402 | Payment Required
+| Reserved for future use
+
+| 403 | Forbidden
+| The request contained valid data and was understood by the server, but the server is refusing action
+
+| 404 | Not Found
+| The requested resource could not be found but may be available in the future. Subsequent requests by the client are
+permissible
+
+| 405 | Method Not Allowed
+| A request method is not supported for the requested source
+
+| 406 | Not Acceptable
+| The requested resource is capable of generating only content not acceptable according to the Accept headers sent in
+the request
+
+| 407 | Proxy Authentication Required
+| The client must first authenticate itself with the proxy
+
+| 408 | Request Timeout
+| The server timed out waiting for a request.
+
+| 409 | Conflict
+| Indicates that the request could not be processed because of conflict in the current state of the resource, such as an
+edit conflict between multiple simultaneous updates
+
+| 410 | Gone
+| Indicates that the resource requested was previously in use but is no longer available and will not be available again
+
+| 411 | Length Required
+| The request did not specify the length of its content, which is required by the resource
+
+| 412 | Precondition Failed
+| The server does not meet one of the preconditions that the requester put on the request header files
+
+| 413 | Payload Too Large
+| The request is larger than the server is willing or able to process
+
+| 414 | URI Too Long
+| The URI provided was too long for the server to process
+
+| 415 | Unsupported Media Type
+| The request entity has a media type which the server or resource does not support
+
+| 416 | Range Not Satisfiable
+| The client has asked for a portion of the file, but the server cannot supply that portion
+
+| 417 | Expectation Failed
+| The server cannot meet the requirements of the Expect request-header field
+
+| 418 | I'm a teapot
+| This code was defined in 1998 as one of the traditional IETF April Fools' jokes, in RFC 2324, Hyper Text Coffee Pot
+Control Protocol, and is not expected to be implemented by actual HTTP servers
+
+| 421 | Misdirect Request
+| The request was directed at a server that is not able to produce a response
+
+| 422 | Unprocessable Content
+| The request was well-formed but could not be processed
+
+| 423 | Locked
+| The resource that is being accessed is locked
+
+| 424 | Failed Dependency
+| The request failed because it depended on another request and that request failed
+
+| 425 | Too Early
+| Indicates that the server is unwilling to risk processing a request that might be replayed
+
+| 426 | Upgrade Required
+| The client should switch to a different protocol such as TLS/1.3, given in the Upgrade header field
+
+| 428 | Precondition required
+| The origin server requires the request to be conditional
+
+| 429 | Too Many Requests
+| The user has sent too many requests in a given amount of time
+
+| 431 | Request Header Fields Too Large
+| The server is unwilling to process the request because either an individual header field, or all the header fields
+collectively, are too large
+
+| 451 | Unavailable For Legal Reasons
+| A server operator has received a legal demand to deny access to a resource or to a set of resources that includes the
+requested resource
+
+|||
+
+| 500 | Internal Server Error
+| A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+
+| 501 | Not Implemented
+| The server either does not recognize the request method, or it lacks in the ability to fulfil the request
+
+| 502 | Bad Gateway
+| The server was acting as a gateway or proxy and received an invalid response from the upstream server
+
+| 503 | Service Unavailable
+| The server cannot handle the request
+
+| 504 | Gateway Timeout
+| The server was acting as a gateway or proxy and did not receive a timely response from the upstream server
+
+| 505 | HTTP Version Not Supported
+| The server does not support the HTTP version used in the request
+
+| 506 | Variant Also Negotiates
+| Transparent content negotiation for the request results in a circular reference
+
+| 507 | Insufficient Storage
+| The server is unable to store the representation needed to complete the request
+
+| 508 | Loop Detected
+| The server detected a loop while processing the request
+
+| 510 | Not Extended
+| Further extensions to the request are required for the server to fulfil it
+
+| 511 | Network Authentication Required
+| The client needs to authenticate to gain network access
+
+|||
+
+| 218 | This is fine
+| Used by Apache servers. A catch-all error condition allowing the passage of message bodies through the server when the
+ProxyErrorOverride setting is enabled.
+
+| 419 | Page Expired
+| Used by the Laravel Framework when a CSRF Token is missing or expired
+
+| 420 | Method Failure
+| A deprecated response status proposed during the development of WebDAV used by the Spring Framework when a method has
+failed
+
+| 420 | Enhance Your Calm
+| Returned in version 1 of Twitter Search and Trends API when the client is being rate limited; versions 1.1 and later
+use the 429 Too Many Requests response code instead
+
+| 430 | Request Header Fields Too Large
+| A deprecated response used by Shopify, instead of the 429 Too Many Requests response code, when too many URLs are
+requested within a certain time frame
+
+| 430 | Shopify Security Rejection
+| Used by Shopify to signal that the request was deemed malicious
+
+| 450 | Blocked by Windows Parental Controls
+| The Microsoft extension code indicates that when Windows Parental Controls are turned on and are blocking access to
+the requested webpage
+
+| 498 | Invalid Token
+| Returned by ArcGIS for Server. Code 498 indicates an expired or otherwise invalid token
+
+| 499 | Token Required
+| Returned by ArcGIS for Server. Code 499 indicates that a token is required but was not submitted
+
+| 509 | Bandwidth Limit Exceeded
+| The server has exceeded the bandwidth specified by the server administrator
+
+| 592 | Site is overloaded
+| Used by Qualys in the SSLLabs server testing API to signal that the site can not process the request
+
+| 530 | Site is frozen
+| Used by the Pantheon Systems web platform to indicate that a site has been frozen due to inactivity
+
+| 530 | Origin DNS Error
+| Used by Shopify to indicate that Cloudflare can't resolve the requested DNS record
+
+| 540 | Temporarily Disabled
+| Used by Shopify to indicate that the requested endpoint has been temporarily disabled
+
+| 598 | (Informal convention) Network read timeout error
+| Used by some HTTP proxies to signal a network read timeout behind the proxy to a client in from of the proxy
+
+| 599 | Network Connection Timeout Error
+| Used by some HTTP proxies to signal a network connect timeout behind proxy to a client in front of the proxy
+
+| 783 | Unexpected Token
+| Used by Shopify to indicate that the request includes a JSON syntax error
+
+|===
